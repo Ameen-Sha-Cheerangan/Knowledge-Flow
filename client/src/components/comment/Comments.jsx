@@ -79,7 +79,7 @@ export const Comments = ({ setModal, comments, fetchComments }) => {
       <div>
         {parentComments.map((parentComment) => (
           <Comment
-            key={parentCommentId}
+            key={parentComment._id} // Use unique ID for the key
             setModal={setModal}
             parentComment={parentComment}
             comments={comments}

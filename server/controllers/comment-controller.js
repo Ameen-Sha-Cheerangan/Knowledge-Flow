@@ -52,7 +52,9 @@ exports.createComment = async (req, res) => {
 exports.getComments = async (req, res) => {
   const { postId } = req.params;
   try {
-    const comments = await CommentModel.find({ post: postId });
+    const comments = await CommentModel.find({ post: postId })
+      .populate("author", "username") // This populates the 'author' field with the 'username' field
+      .exec();
     res.status(200).json(comments);
   } catch (error) {
     res.status(200).json({ error: error.message });

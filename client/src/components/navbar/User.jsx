@@ -201,8 +201,8 @@ export const User = ({
                     <h1 className='text-2xl font-bold mb-14'>Sign Up</h1>
                     <input
                       className={` shadow-md rounded-lg h-14 p-4 bg-[#343944] hover:border-gray-400 border border-[#343944] placeholder:text-sm ${notify === 'User already exists'
-                          ? 'border-red-500 hover:border-red-500'
-                          : ''
+                        ? 'border-red-500 hover:border-red-500'
+                        : ''
                         }`}
                       type='text'
                       placeholder='Username'
@@ -212,8 +212,8 @@ export const User = ({
                     />
                     <input
                       className={` shadow-md rounded-lg h-14 p-4 bg-[#343944] hover:border-gray-400 border border-[#343944] ${notify === 'Password do not match'
-                          ? 'border-red-500 hover:border-red-500'
-                          : ''
+                        ? 'border-red-500 hover:border-red-500'
+                        : ''
                         }  placeholder:text-sm`}
                       placeholder='Password'
                       type='password'
@@ -226,8 +226,8 @@ export const User = ({
                     />
                     <input
                       className={`  shadow-md rounded-lg h-14 p-4 bg-[#343944] hover:border-gray-400 border-[#343944] border ${notify === 'Password do not match'
-                          ? 'border-red-500 hover:border-red-500'
-                          : ''
+                        ? 'border-red-500 hover:border-red-500'
+                        : ''
                         }  placeholder:text-sm`}
                       placeholder='Confirm Password'
                       type='password'

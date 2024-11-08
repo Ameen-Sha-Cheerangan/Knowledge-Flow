@@ -52,6 +52,11 @@ export const Comment = ({
     fetchComments();
   };
   const deleteHandler = async () => {
+    if (parentComment.author._id !== userId) {
+      toast.error("You can only delete your own comments");
+      return;
+    }
+
     await fetch('http://localhost:8000/deleteComment', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: token },
@@ -61,7 +66,8 @@ export const Comment = ({
       }),
     })
       .then((res) => res.json())
-      .then((data) => toast.success(data.message));
+      .then((data) => toast.success(data.message))
+      .catch((err) => toast.error("An error occurred while deleting the comment"));
 
     fetchComments();
   };
@@ -162,8 +168,8 @@ export const Comment = ({
         </div>
         <div>
           <div className='flex  items-center'>
-            <div className='mr-1'>{username}</div>
-            <div className=' text-sm '>{commentDate()}</div>
+            <div className='mr-1'>{parentComment.author.username}</div> {/* Display author of the comment */}
+            <div className='text-sm'>{commentDate()}</div>
           </div>
           <div>{parentComment.body}</div>
           <section className='flex'>
@@ -179,18 +185,21 @@ export const Comment = ({
               </div>
             </div>
 
-            <div
-              onClick={deleteHandler}
-              className='flex mt-2 cursor-pointer hover:bg-gray-200 px-2 py-1 w-20 '
-            >
-              <div className='flex text-center justify-center items-center pr-1 '>
-                <i className='opacity-90'>
-                  <DeleteSharpIcon />
-                </i>
-                <button className=''>Delete</button>
+            {parentComment.author._id === userId && (
+              <div
+                onClick={deleteHandler}
+                className='flex mt-2 cursor-pointer hover:bg-gray-200 px-2 py-1 w-20 '
+              >
+                <div className='flex text-center justify-center items-center pr-1 '>
+                  <i className='opacity-90'>
+                    <DeleteSharpIcon />
+                  </i>
+                  <button className=''>Delete</button>
+                </div>
               </div>
-            </div>
+            )}
           </section>
+
         </div>
       </div>
       {isReply && (
