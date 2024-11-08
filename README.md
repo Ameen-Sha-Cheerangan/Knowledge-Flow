@@ -2,4 +2,4 @@
 
 ```js
 cd server
-MONGODB_URI=<insert you mongo db uri>
+MONGODB_URI=<insert your mongo db uri>
