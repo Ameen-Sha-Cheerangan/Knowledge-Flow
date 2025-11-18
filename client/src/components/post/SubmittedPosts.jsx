@@ -17,7 +17,7 @@ const SubmittedPosts = ({ setModal, isLoggedIn }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        'http://localhost:8000/submittedPosts',
+        'https://knowledge-flow-backend.onrender.com/submittedPosts',
         {
           headers: {
             Authorization: token,

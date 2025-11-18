@@ -12,7 +12,7 @@ const SavedPosts = ({ setModal, isLoggedIn }) => {
   }, []);
   const fetchData = async () => {
     const res = await axios.get(
-      'http://localhost:8000/savedPosts',
+      'https://knowledge-flow-backend.onrender.com/savedPosts',
       {
         headers: {
           Authorization: token,

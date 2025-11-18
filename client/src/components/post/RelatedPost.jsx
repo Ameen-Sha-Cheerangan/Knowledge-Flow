@@ -15,7 +15,7 @@ const RelatedPost = ({ setModal, isLoggedIn }) => {
 
   const fetchComments = async () => {
     const res = await axios.get(
-      `http://localhost:8000/comments/${postId}`,
+      `https://knowledge-flow-backend.onrender.com/comments/${postId}`,
       {
         headers: {
           Authorization: token,
@@ -31,7 +31,7 @@ const RelatedPost = ({ setModal, isLoggedIn }) => {
 
   const fetchData = async () => {
     const res = await axios.get(
-      `http://localhost:8000/post/${postId}`,
+      `https://knowledge-flow-backend.onrender.com/post/${postId}`,
     );
     setPost(res.data);
   };

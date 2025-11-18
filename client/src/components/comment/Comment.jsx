@@ -53,7 +53,7 @@ export const Comment = ({
     if (!token) {
       return setModal(true);
     }
-    await fetch('http://localhost:8000/commentVote', {
+    await fetch('https://knowledge-flow-backend.onrender.com/commentVote', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export const Comment = ({
       return;
     }
 
-    await fetch('http://localhost:8000/deleteComment', {
+    await fetch('https://knowledge-flow-backend.onrender.com/deleteComment', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: token },
       body: JSON.stringify({
@@ -115,7 +115,7 @@ export const Comment = ({
     }
 
     const res = await axios.post(
-      'http://localhost:8000/createComment',
+      'https://knowledge-flow-backend.onrender.com/createComment',
       {
         body: comment,
         post: postId,
@@ -135,7 +135,7 @@ export const Comment = ({
   const submitEdit = async () => {
     console.log("Editing comment...");
     try {
-      await axios.put(`http://localhost:8000/editComment/${parentComment._id}`,
+      await axios.put(`https://knowledge-flow-backend.onrender.com/editComment/${parentComment._id}`,
         {
           body: editInput
         },

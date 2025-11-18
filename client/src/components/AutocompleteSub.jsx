@@ -51,7 +51,7 @@ export const AutocompleteSub = ({ refTwo, focus, topic, subcategory, setSubcateg
 
   const fetchCategories = async () => {
     const res = await axios.get(
-      `http://localhost:8000/subcategories`,
+      `https://knowledge-flow-backend.onrender.com/subcategories`,
       {
         headers: {
           Authorization: localStorage.getItem('token'),

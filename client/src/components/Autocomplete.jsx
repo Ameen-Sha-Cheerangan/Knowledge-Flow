@@ -38,7 +38,7 @@ export const Autocomplete = ({ focus, topic, setTopic, refOne }) => {
 
   const fetchCategories = async () => {
     const res = await axios.get(
-      `http://localhost:8000/categories`,
+      `https://knowledge-flow-backend.onrender.com/categories`,
       {
         headers: {
           Authorization: localStorage.getItem('token'),

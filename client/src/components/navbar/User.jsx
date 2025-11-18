@@ -31,7 +31,7 @@ export const User = ({
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8000/login', {
+      const res = await axios.post('https://knowledge-flow-backend.onrender.com/login', {
         username: username,
         password: password,
       });
@@ -72,7 +72,7 @@ export const User = ({
 
 
     try {
-      const res = await axios.post('http://localhost:8000/register', {
+      const res = await axios.post('https://knowledge-flow-backend.onrender.com/register', {
         username: username,
         password: password,
         email: email, // Include email in the payload

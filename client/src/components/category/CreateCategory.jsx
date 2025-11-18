@@ -21,7 +21,7 @@ const CreateCategory = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                'http://localhost:8000/createCategory',
+                'https://knowledge-flow-backend.onrender.com/createCategory',
                 {
                     category
                 },

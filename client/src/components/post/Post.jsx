@@ -45,7 +45,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
   }, [post.body]);
   const isSaved = async () => {
     if (token) {
-      await fetch('http://localhost:8000/user', {
+      await fetch('https://knowledge-flow-backend.onrender.com/user', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-    await fetch('http://localhost:8000/vote', {
+    await fetch('https://knowledge-flow-backend.onrender.com/vote', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-    await fetch('http://localhost:8000/savePost', {
+    await fetch('https://knowledge-flow-backend.onrender.com/savePost', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
   };
 
   const deleteHandler = async (post) => {
-    await fetch('http://localhost:8000/deletePost', {
+    await fetch('https://knowledge-flow-backend.onrender.com/deletePost', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
       .then((data) => toast.success(data.message));
 
     fetchData();
-    await fetch('http://localhost:8000/deleteComment', {
+    await fetch('https://knowledge-flow-backend.onrender.com/deleteComment', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: token },
       body: JSON.stringify({
@@ -145,7 +145,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8000/editPost/${post._id}`, {
+      const response = await fetch(`https://knowledge-flow-backend.onrender.com/editPost/${post._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

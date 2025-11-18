@@ -13,7 +13,7 @@ export const Posts = ({ isLoggedIn, setModal, sort, setSort }) => {
   }, [sort]);
 
   const fetchData = async () => {
-    await fetch(`http://localhost:8000/posts/${sortType}`, {
+    await fetch(`https://knowledge-flow-backend.onrender.com/posts/${sortType}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

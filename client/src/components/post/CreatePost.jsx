@@ -49,7 +49,7 @@ const CreatePost = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        'http://localhost:8000/createPost',
+        'https://knowledge-flow-backend.onrender.com/createPost',
         {
           body: content,
           title: title,

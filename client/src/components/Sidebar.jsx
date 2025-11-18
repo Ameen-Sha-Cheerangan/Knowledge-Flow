@@ -52,7 +52,7 @@ export const SideBar = ({ submitHandler }) => {
   }, []);
 
   const fetchTopics = async () => {
-    const res = await axios.get('http://localhost:8000/categories');
+    const res = await axios.get('https://knowledge-flow-backend.onrender.com/categories');
     setTopics(res.data);
   };
 

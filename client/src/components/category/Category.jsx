@@ -14,7 +14,7 @@ const Category = ({ setModal, isLoggedIn }) => {
 
     const fetchData = async () => {
         const res = await axios.get(
-            `http://localhost:8000/sub/${category}`,
+            `https://knowledge-flow-backend.onrender.com/sub/${category}`,
         );
         setPosts(res.data);
     };

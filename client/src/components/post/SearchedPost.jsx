@@ -18,7 +18,7 @@ const SearchedPost = ({ setModal, isLoggedIn }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/search/${query}`,
+        `https://knowledge-flow-backend.onrender.com/search/${query}`,
       );
       setPosts(res.data.posts);
     } catch (error) {
