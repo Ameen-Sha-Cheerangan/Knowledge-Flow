@@ -20,7 +20,6 @@ This is a Knowledge-Flow project.
 
 ## Setting up the .env
 
-<<<<<<< HEAD
 Both the `server` and `client` folders have a `.env.example` file. Copy each one to `.env` and fill in your values.
 
 ```bash
