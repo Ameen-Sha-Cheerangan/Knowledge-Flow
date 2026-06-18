@@ -40,7 +40,7 @@ cp client/.env.example client/.env
 | Variable       | Description        | Example                                                    |
 | -------------- | ------------------ | ---------------------------------------------------------- |
 | `VITE_API_URL` | Backend base URL   | `http://localhost:8000` (dev) or your deployed URL (prod)  |
-=======
+
 1. cd into the server folder
 2. create a .env file
 3. add the following
