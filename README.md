@@ -58,7 +58,6 @@ MONGODB_URI='mongodb://localhost:27017/myDataBase'
 PORT=8000
 JWT_SECRET=1234
 ```
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
 
 ## Running the Project
 
