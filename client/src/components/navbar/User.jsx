@@ -31,7 +31,11 @@ export const User = ({
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
+=======
+      const res = await axios.post('https://knowledge-flow-backend.onrender.com/login', {
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         username: username,
         password: password,
       });
@@ -72,7 +76,11 @@ export const User = ({
 
 
     try {
+<<<<<<< HEAD
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
+=======
+      const res = await axios.post('https://knowledge-flow-backend.onrender.com/register', {
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         username: username,
         password: password,
         email: email, // Include email in the payload

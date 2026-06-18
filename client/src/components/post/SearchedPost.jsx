@@ -18,7 +18,11 @@ const SearchedPost = ({ setModal, isLoggedIn }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
+<<<<<<< HEAD
         `${import.meta.env.VITE_API_URL}/search/${query}`,
+=======
+        `https://knowledge-flow-backend.onrender.com/search/${query}`,
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       );
       setPosts(res.data.posts);
     } catch (error) {

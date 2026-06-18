@@ -53,7 +53,11 @@ export const Comment = ({
     if (!token) {
       return setModal(true);
     }
+<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/commentVote`, {
+=======
+    await fetch('https://knowledge-flow-backend.onrender.com/commentVote', {
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +77,11 @@ export const Comment = ({
       return;
     }
 
+<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/deleteComment`, {
+=======
+    await fetch('https://knowledge-flow-backend.onrender.com/deleteComment', {
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: token },
       body: JSON.stringify({
@@ -115,7 +123,11 @@ export const Comment = ({
     }
 
     const res = await axios.post(
+<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/createComment`,
+=======
+      'https://knowledge-flow-backend.onrender.com/createComment',
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       {
         body: comment,
         post: postId,
@@ -135,7 +147,11 @@ export const Comment = ({
   const submitEdit = async () => {
     console.log("Editing comment...");
     try {
+<<<<<<< HEAD
       await axios.put(`${import.meta.env.VITE_API_URL}/editComment/${parentComment._id}`,
+=======
+      await axios.put(`https://knowledge-flow-backend.onrender.com/editComment/${parentComment._id}`,
+>>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         {
           body: editInput
         },
