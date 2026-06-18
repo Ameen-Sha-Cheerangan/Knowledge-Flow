@@ -20,6 +20,6 @@ exports.protect = async (req, res, next) => {
     req.user = user;// Attach the user to the request object
     next();//call the next middleware
   } catch (error) {
-    return res.json({ error: error.message });
+    return res.status(401).json({ error: error.message });
   }
 };

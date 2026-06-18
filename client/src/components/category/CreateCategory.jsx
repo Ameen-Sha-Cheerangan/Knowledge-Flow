@@ -1,21 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { SideBar } from '../Sidebar';
-import { Autocomplete } from '../Autocomplete';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
 const CreateCategory = () => {
-    const refOne = useRef(null);
     const [category, setCategory] = useState('');
-    const [focusOne, setFocusOne] = useState(false);
-    const handleCloseSearch = (e) => {
-        //If user click outside the input
-        if (!refOne.current.contains(e.target)) {
-            setFocusOne(false);
-        } else {
-            setFocusOne(true);
-        }
-    };
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -34,12 +23,12 @@ const CreateCategory = () => {
             toast.success(res.data.message);
             setCategory('');
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error.response?.data?.message || 'Something went wrong');
         }
     };
 
     return (
-        <div className='bg-[#191A21] min-h-screen' onClick={handleCloseSearch}>
+        <div className='bg-[#191A21] min-h-screen'>
             <SideBar submitHandler={submitHandler} />
             <div className='pt-20 w-[40%] md:mx-auto h-full mx-2 text-[#f6f7f9]' style={{ marginLeft: '26%' }}>
                 <h1 className='mb-10 ml-30 text-5xl font-medium '>Create a Department</h1>

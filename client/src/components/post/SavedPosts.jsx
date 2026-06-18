@@ -11,15 +11,19 @@ const SavedPosts = ({ setModal, isLoggedIn }) => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const res = await axios.get(
-      `${import.meta.env.VITE_API_URL}/savedPosts`,
-      {
-        headers: {
-          Authorization: token,
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/savedPosts`,
+        {
+          headers: {
+            Authorization: token,
+          },
         },
-      },
-    );
-    setPosts(res.data);
+      );
+      setPosts(res.data);
+    } catch (err) {
+      console.error('Error fetching saved posts:', err);
+    }
   };
 
   return (

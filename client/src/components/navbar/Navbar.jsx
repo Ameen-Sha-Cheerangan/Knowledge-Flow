@@ -20,7 +20,7 @@ export const Navbar = ({
       return;
     }
     e.preventDefault();
-    navigate(`search/${searchInput}`);
+    navigate(`/search/${searchInput}`);
     setSearchInput('');
   };
   return (

@@ -49,20 +49,16 @@ exports.editPost = async (req, res) => {
   const { postId } = req.params;
   const { title, body } = req.body;
 
-  // Check if user is authorized to edit the post
-  const post = await PostModel.findById(postId);
-  if (!post) {
-    return res.status(404).json({ message: 'Post not found' });
-  }
-  if (post.author.toString() !== req.user.id) {
-    return res.status(403).json({ message: 'You are not authorized to edit this post' });
-  }
-
-  // Update the post
-  post.title = title || post.title;
-  post.body = body || post.body;
-
   try {
+    const post = await PostModel.findById(postId);
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+    if (post.author.toString() !== req.user.id) {
+      return res.status(403).json({ message: 'You are not authorized to edit this post' });
+    }
+    post.title = title || post.title;
+    post.body = body || post.body;
     await post.save();
     res.json({ message: 'Post updated successfully', post });
   } catch (error) {
@@ -73,17 +69,15 @@ exports.editPost = async (req, res) => {
 exports.deletePost = async (req, res) => {
   const { postId } = req.body;
   try {
-    //Find the post by its ID
     const post = await PostModel.findById({ _id: postId });
-    //Check if the post exists
     if (!post) {
       return res.status(404).json({ message: 'Post not found' });
     }
-    //Delete the post
-    if (post) {
-      await PostModel.deleteOne({ _id: postId });
-      return res.status(200).json({ message: 'Post deleted successfully' });
+    if (post.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'You are not authorized to delete this post' });
     }
+    await PostModel.deleteOne({ _id: postId });
+    return res.status(200).json({ message: 'Post deleted successfully' });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }

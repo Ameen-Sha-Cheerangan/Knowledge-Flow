@@ -122,9 +122,8 @@ exports.deleteComment = async (req, res) => {
 
   try {
     // If commentId is not provided or is not a string, delete all comments for the post
-    if (!commentId || typeof commentId !== "string") {
-      await CommentModel.deleteMany({ post: postId });
-      return res.status(200).json({ message: "All comments deleted successfully" });
+    if (!commentId) {
+      return res.status(400).json({ message: 'commentId is required' });
     }
 
     // Recursive function to delete subcomments

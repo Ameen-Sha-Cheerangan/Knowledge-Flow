@@ -1,6 +1,6 @@
 import { Navbar } from './components/navbar/Navbar';
 import { LandingPage } from './components/LandingPage';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useRef, lazy, Suspense, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import LoadingScreen from './components/LoadingScreen';
@@ -34,7 +34,7 @@ function App() {
   // Simulate fetching authentication status
   useEffect(() => {
     const fetchAuthState = async () => {
-      const authState = localStorage.getItem('isLoggedIn') === 'true';
+      const authState = !!localStorage.getItem('token');
       setIsLoggedIn(authState);
       setLoading(false); // Once loaded, stop the loading state
     };
