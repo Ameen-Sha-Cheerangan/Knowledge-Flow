@@ -41,6 +41,24 @@ cp client/.env.example client/.env
 | -------------- | ------------------ | ---------------------------------------------------------- |
 | `VITE_API_URL` | Backend base URL   | `http://localhost:8000` (dev) or your deployed URL (prod)  |
 
+1. cd into the server folder
+2. create a .env file
+3. add the following
+
+```
+MONGODB_URI=<your mongodb uri>
+PORT=<your port>
+JWT_SECRET=<your jwt secret>
+```
+
+Giving an example
+
+```
+MONGODB_URI='mongodb://localhost:27017/myDataBase'
+PORT=8000
+JWT_SECRET=1234
+```
+
 ## Running the Project
 
 1. cd into the server folder
