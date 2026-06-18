@@ -15,11 +15,7 @@ const RelatedPost = ({ setModal, isLoggedIn }) => {
 
   const fetchComments = async () => {
     const res = await axios.get(
-<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/comments/${postId}`,
-=======
-      `https://knowledge-flow-backend.onrender.com/comments/${postId}`,
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       {
         headers: {
           Authorization: token,
@@ -35,11 +31,7 @@ const RelatedPost = ({ setModal, isLoggedIn }) => {
 
   const fetchData = async () => {
     const res = await axios.get(
-<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/post/${postId}`,
-=======
-      `https://knowledge-flow-backend.onrender.com/post/${postId}`,
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
     );
     setPost(res.data);
   };

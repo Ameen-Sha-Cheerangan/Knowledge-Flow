@@ -38,11 +38,7 @@ export const Autocomplete = ({ focus, topic, setTopic, refOne }) => {
 
   const fetchCategories = async () => {
     const res = await axios.get(
-<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/categories`,
-=======
-      `https://knowledge-flow-backend.onrender.com/categories`,
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       {
         headers: {
           Authorization: localStorage.getItem('token'),

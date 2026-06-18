@@ -17,21 +17,13 @@ const Subcategory = ({ setModal, isLoggedIn }) => {
 
   const fetchData = async () => {
     const res = await axios.get(
-<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/sub/${subcategory}`,
-=======
-      `https://knowledge-flow-backend.onrender.com/sub/${subcategory}`,
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
     );
     setPosts(res.data);
   };
   const fetchCategory = async () => {
     try {
-<<<<<<< HEAD
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
-=======
-      const res = await axios.get(`https://knowledge-flow-backend.onrender.com/categories`);
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       const categories = res.data;
 
       // Find the category that contains the current subcategory

@@ -49,11 +49,7 @@ const CreatePost = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-<<<<<<< HEAD
         `${import.meta.env.VITE_API_URL}/createPost`,
-=======
-        'https://knowledge-flow-backend.onrender.com/createPost',
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         {
           body: content,
           title: title,

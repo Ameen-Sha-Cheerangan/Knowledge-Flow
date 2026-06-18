@@ -13,11 +13,7 @@ export const Posts = ({ isLoggedIn, setModal, sort, setSort }) => {
   }, [sort]);
 
   const fetchData = async () => {
-<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/posts/${sortType}`, {
-=======
-    await fetch(`https://knowledge-flow-backend.onrender.com/posts/${sortType}`, {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

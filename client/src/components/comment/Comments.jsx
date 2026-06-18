@@ -32,11 +32,7 @@ export const Comments = ({ setModal, comments, fetchComments }) => {
       return setModal(true);
     }
     const res = await axios.post(
-<<<<<<< HEAD
       `${import.meta.env.VITE_API_URL}/createComment`,
-=======
-      'https://knowledge-flow-backend.onrender.com/createComment',
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       {
         body: parentInput,
         post: postId,

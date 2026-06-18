@@ -45,11 +45,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
   }, [post.body]);
   const isSaved = async () => {
     if (token) {
-<<<<<<< HEAD
       await fetch(`${import.meta.env.VITE_API_URL}/user`, {
-=======
-      await fetch('https://knowledge-flow-backend.onrender.com/user', {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -81,11 +77,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/vote`, {
-=======
-    await fetch('https://knowledge-flow-backend.onrender.com/vote', {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -103,11 +95,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/savePost`, {
-=======
-    await fetch('https://knowledge-flow-backend.onrender.com/savePost', {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -124,11 +112,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
   };
 
   const deleteHandler = async (post) => {
-<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/deletePost`, {
-=======
-    await fetch('https://knowledge-flow-backend.onrender.com/deletePost', {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -142,11 +126,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
       .then((data) => toast.success(data.message));
 
     fetchData();
-<<<<<<< HEAD
     await fetch(`${import.meta.env.VITE_API_URL}/deleteComment`, {
-=======
-    await fetch('https://knowledge-flow-backend.onrender.com/deleteComment', {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: token },
       body: JSON.stringify({
@@ -165,11 +145,7 @@ export const Post = ({ post, isLoggedIn, setModal, fetchData, isSubmit }) => {
     }
 
     try {
-<<<<<<< HEAD
       const response = await fetch(`${import.meta.env.VITE_API_URL}/editPost/${post._id}`, {
-=======
-      const response = await fetch(`https://knowledge-flow-backend.onrender.com/editPost/${post._id}`, {
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

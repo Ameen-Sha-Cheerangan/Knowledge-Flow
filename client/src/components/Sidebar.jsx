@@ -52,11 +52,7 @@ export const SideBar = ({ submitHandler }) => {
   }, []);
 
   const fetchTopics = async () => {
-<<<<<<< HEAD
     const res = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
-=======
-    const res = await axios.get('https://knowledge-flow-backend.onrender.com/categories');
->>>>>>> ad6ca4ff6a2b52b5f5c5be6486353950604113b6
     setTopics(res.data);
   };
 
